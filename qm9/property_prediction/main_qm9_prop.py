@@ -8,6 +8,7 @@ from qm9.property_prediction import prop_utils
 import json
 from qm9 import dataset, utils
 import pickle
+import wandb
 import logging
 from qm9.analyze import analyze_stability_for_molecules
 
@@ -104,6 +105,28 @@ def train(model, epoch, loader, mean, mad, property, device, partition='train', 
             logging.info(prefix + "Epoch %d \t Iteration %d \t loss %.4f" % (epoch, i, sum(res['loss_arr'][-10:])/len(res['loss_arr'][-10:])))
         if debug_break:
             break
+        
+        # Log loss of each iteration in wandb for both training and validation
+        wandb.log({"%s_iteration_loss" % partition: loss.item()})
+        wandb.log({"%s_epoch_loss" % partition: res['loss'] / res['counter']})
+        
+        # log mae and predicted condition for each batch
+        table = wandb.Table(columns=["batch", "MAE", "Condition"])
+        mae = nn.L1Loss(reduction='none')(mad * pred + mean, label)
+        condition = mad * pred + mean
+
+        # Add rows to the table
+        for i, (mae, condition) in enumerate(zip(mae, condition)):
+            table.add_data(i, mae.item(), condition.item())
+
+        # Log the table
+        wandb.log({"mae_condition_table": table})
+
+
+    # Log average loss of the epoch in wandb after loop completes
+    wandb.log({"%s_epoch_average_loss" % partition: res['loss'] / res['counter']})
+        
+        
     molecules = {key: torch.cat(molecules[key], dim=0) for key in molecules}
     stability_dict, rdkit_metrics = analyze_stability_for_molecules(
         molecules, dataset_info)

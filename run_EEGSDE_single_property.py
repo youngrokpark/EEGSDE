@@ -5,15 +5,19 @@ device = available_devices(threshold=10000,n_devices=1)
 os.environ["CUDA_VISIBLE_DEVICES"] = format_devices(device)
 import torch
 import pickle
+import wandb
 from configs.datasets_config import get_dataset_info
 from qm9 import dataset
 from qm9.utils import compute_mean_mad
+from qm9.analyze import analyze_stability_for_molecules
 from qm9.property_prediction import main_qm9_prop
 import os
 from tool.utils import set_logger,timenow
 import logging
 from energys_prediction.sampling import sample, test, get_model
 from tool.reproducibility import set_seed
+import qm9.visualizer as vis
+import utils
 
 def get_classifier(classifiers_path,args_classifiers_path, device='cpu'):
     with open(args_classifiers_path, 'rb') as f:
@@ -79,6 +83,11 @@ class DiffusionDataloader:
         self.i = 0
         self.guidance = guidance
         self.l = l
+        self.validity = 0.0
+        self.uniqueness = 0.0
+        self.novelty = 0.0
+        self.mol_stable = 0.0
+        self.atm_stable = 0.0
 
     def __iter__(self):
         return self
@@ -112,6 +121,44 @@ class DiffusionDataloader:
             'one_hot': one_hot.detach(),
             prop_key: context.detach()
         }
+        
+        # metrics
+        print(f'Analyzing molecule stability at iteration {self.i}...')
+
+        molecules = {'one_hot': [], 'x': [], 'node_mask': []}
+
+        molecules['one_hot'].append(one_hot.detach().cpu())
+        molecules['x'].append(x.detach().cpu())
+        molecules['node_mask'].append(node_mask.detach().cpu())
+
+        molecules = {key: torch.cat(molecules[key], dim=0) for key in molecules}
+        validity_dict, rdkit_tuple = analyze_stability_for_molecules(molecules, self.dataset_info)
+
+        wandb.log(validity_dict)
+        if rdkit_tuple is not None:
+            wandb.log({'Validity': rdkit_tuple[0][0], 'Uniqueness': rdkit_tuple[0][1], 'Novelty': rdkit_tuple[0][2]})
+        
+        print(f'Mol Stability: {validity_dict["mol_stable"]}, Atom Stability: {validity_dict["atm_stable"]}')
+        
+        # avg values
+        self.mol_stable += validity_dict['mol_stable'] 
+        self.atm_stable += validity_dict['atm_stable']
+        if rdkit_tuple is not None:
+            self.validity += rdkit_tuple[0][0]
+            self.uniqueness += rdkit_tuple[0][1]
+            self.novelty += rdkit_tuple[0][2]   
+        
+        wandb.log({'Avg Molecule Stability': self.mol_stable / (self.i),
+                     'Avg Atom Stability': self.atm_stable / (self.i),
+                     'Avg Validity': self.validity / (self.i),
+                     'Avg Uniqueness': self.uniqueness / (self.i),
+                     'Avg Novelty': self.novelty / (self.i),})
+        
+        # save molecules
+        vis.save_xyz_file(
+            'outputs/%s/analysis/run%s/' % (args.exp_name, self.i), one_hot, charges, x, self.dataset_info,
+            id_from=0, name='conditional_sampling', node_mask=node_mask)
+        
         return data
 
     def __next__(self):
@@ -169,14 +216,30 @@ if __name__ == "__main__":
     parser.add_argument('--batch_size', type=int, default=100, help='batch size for each iteration')
     parser.add_argument('--iterations', type=int, default=100, help='the number of iterations')
     parser.add_argument('--save', type=str, default=True, help='whether save the generated molecules as .txt')
+    parser.add_argument('--wandb_usr', type=str)    
+    parser.add_argument('--no_wandb', action='store_true', help='Disable wandb')
+    parser.add_argument('--online', type=bool, default=True, help='True = wandb online -- False = wandb offline')
+    parser.add_argument('--project_name', type=str, default='Final Result')
 
     #args
     args = parser.parse_args()
     args.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     set_seed(1234)
+    
+    args.wandb_usr = utils.get_wandb_username(args.wandb_usr)
+    # Wandb config
+    if args.no_wandb:
+        mode = 'disabled'
+    else:
+        mode = 'online' if args.online else 'offline'
+    kwargs = {'entity': args.wandb_usr, 'name': args.exp_name, 'project': args.project_name, 'config': args,
+            'settings': wandb.Settings(_disable_stats=True), 'reinit': True, 'mode': mode}
+    wandb.init(**kwargs)
 
     #save path
     args.result_path = os.path.join('outputs', args.exp_name, 'l_' + str(args.l))
     os.makedirs(args.result_path, exist_ok=True)
     set_logger(args.result_path, 'logs.txt')
     main_quantitative(args)
+
+    wandb.save('*.txt')

@@ -32,3 +32,6 @@ figures/
 geom_drugs.sh
 *.pickle
 *.npy
+
+!outputs
+!pretrained_models
