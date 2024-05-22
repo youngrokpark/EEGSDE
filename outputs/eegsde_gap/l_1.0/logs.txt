@@ -1,0 +1,213 @@
+2024-05-21 09:19:33,277 - args_path:pretrained_models/cEDM_gap/args_2290.pickle
+2024-05-21 09:19:33,278 - argse_path:pretrained_models/predict_gap/args_2000.pickle
+2024-05-21 09:19:33,281 - Dataset exists and is processed.
+2024-05-21 09:19:33,780 - Removing thermochemical energy from targets zpve U0 U H G Cv
+2024-05-21 09:19:33,790 - Removing thermochemical energy from targets zpve U0 U H G Cv
+2024-05-21 09:19:33,795 - Removing thermochemical energy from targets zpve U0 U H G Cv
+2024-05-21 09:19:37,885 - model_path:pretrained_models/cEDM_gap/generative_model_ema_2290.npy
+2024-05-21 09:19:38,284 - energy_path:pretrained_models/predict_gap/model_ema_2000.npy
+2024-05-21 09:24:23,331 - generated samples:100/10000
+2024-05-21 09:24:23,850 - Iteration 0 	 loss 0.5028
+2024-05-21 09:29:04,353 - generated samples:200/10000
+2024-05-21 09:29:04,859 - Iteration 1 	 loss 0.5677
+2024-05-21 09:33:44,882 - generated samples:300/10000
+2024-05-21 09:33:45,405 - Iteration 2 	 loss 0.5674
+2024-05-21 09:38:24,924 - generated samples:400/10000
+2024-05-21 09:38:25,442 - Iteration 3 	 loss 0.5740
+2024-05-21 09:43:05,184 - generated samples:500/10000
+2024-05-21 09:43:05,695 - Iteration 4 	 loss 0.5503
+2024-05-21 09:47:45,090 - generated samples:600/10000
+2024-05-21 09:47:45,607 - Iteration 5 	 loss 0.5419
+2024-05-21 09:52:25,033 - generated samples:700/10000
+2024-05-21 09:52:25,541 - Iteration 6 	 loss 0.5475
+2024-05-21 09:57:05,993 - generated samples:800/10000
+2024-05-21 09:57:06,507 - Iteration 7 	 loss 0.5631
+2024-05-21 10:01:46,886 - generated samples:900/10000
+2024-05-21 10:01:47,411 - Iteration 8 	 loss 0.5685
+2024-05-21 10:06:27,439 - generated samples:1000/10000
+2024-05-21 10:06:27,961 - Iteration 9 	 loss 0.5628
+2024-05-21 10:11:08,272 - generated samples:1100/10000
+2024-05-21 10:11:08,780 - Iteration 10 	 loss 0.5563
+2024-05-21 10:15:49,187 - generated samples:1200/10000
+2024-05-21 10:15:49,711 - Iteration 11 	 loss 0.5529
+2024-05-21 10:20:30,055 - generated samples:1300/10000
+2024-05-21 10:20:30,571 - Iteration 12 	 loss 0.5541
+2024-05-21 10:25:10,958 - generated samples:1400/10000
+2024-05-21 10:25:11,476 - Iteration 13 	 loss 0.5484
+2024-05-21 10:29:51,801 - generated samples:1500/10000
+2024-05-21 10:29:52,316 - Iteration 14 	 loss 0.5502
+2024-05-21 10:34:32,582 - generated samples:1600/10000
+2024-05-21 10:34:33,094 - Iteration 15 	 loss 0.5551
+2024-05-21 10:39:13,158 - generated samples:1700/10000
+2024-05-21 10:39:13,670 - Iteration 16 	 loss 0.5497
+2024-05-21 10:43:54,494 - generated samples:1800/10000
+2024-05-21 10:43:55,016 - Iteration 17 	 loss 0.5367
+2024-05-21 10:48:35,277 - generated samples:1900/10000
+2024-05-21 10:48:35,796 - Iteration 18 	 loss 0.5318
+2024-05-21 10:53:15,858 - generated samples:2000/10000
+2024-05-21 10:53:16,368 - Iteration 19 	 loss 0.5364
+2024-05-21 10:57:56,664 - generated samples:2100/10000
+2024-05-21 10:57:57,175 - Iteration 20 	 loss 0.5494
+2024-05-21 11:02:36,915 - generated samples:2200/10000
+2024-05-21 11:02:37,422 - Iteration 21 	 loss 0.5378
+2024-05-21 11:07:18,303 - generated samples:2300/10000
+2024-05-21 11:07:18,809 - Iteration 22 	 loss 0.5292
+2024-05-21 11:11:58,905 - generated samples:2400/10000
+2024-05-21 11:11:59,407 - Iteration 23 	 loss 0.5374
+2024-05-21 11:16:39,894 - generated samples:2500/10000
+2024-05-21 11:16:40,401 - Iteration 24 	 loss 0.5422
+2024-05-21 11:21:20,773 - generated samples:2600/10000
+2024-05-21 11:21:21,293 - Iteration 25 	 loss 0.5362
+2024-05-21 11:26:01,498 - generated samples:2700/10000
+2024-05-21 11:26:02,008 - Iteration 26 	 loss 0.5390
+2024-05-21 11:30:42,878 - generated samples:2800/10000
+2024-05-21 11:30:43,380 - Iteration 27 	 loss 0.5366
+2024-05-21 11:35:23,025 - generated samples:2900/10000
+2024-05-21 11:35:23,533 - Iteration 28 	 loss 0.5376
+2024-05-21 11:40:03,788 - generated samples:3000/10000
+2024-05-21 11:40:04,305 - Iteration 29 	 loss 0.5318
+2024-05-21 11:44:44,429 - generated samples:3100/10000
+2024-05-21 11:44:44,934 - Iteration 30 	 loss 0.5301
+2024-05-21 11:49:25,967 - generated samples:3200/10000
+2024-05-21 11:49:26,478 - Iteration 31 	 loss 0.5406
+2024-05-21 11:54:06,691 - generated samples:3300/10000
+2024-05-21 11:54:07,214 - Iteration 32 	 loss 0.5462
+2024-05-21 11:58:48,134 - generated samples:3400/10000
+2024-05-21 11:58:48,646 - Iteration 33 	 loss 0.5438
+2024-05-21 12:03:29,131 - generated samples:3500/10000
+2024-05-21 12:03:29,657 - Iteration 34 	 loss 0.5453
+2024-05-21 12:08:10,100 - generated samples:3600/10000
+2024-05-21 12:08:10,611 - Iteration 35 	 loss 0.5499
+2024-05-21 12:12:50,787 - generated samples:3700/10000
+2024-05-21 12:12:51,310 - Iteration 36 	 loss 0.5512
+2024-05-21 12:17:31,333 - generated samples:3800/10000
+2024-05-21 12:17:31,855 - Iteration 37 	 loss 0.5538
+2024-05-21 12:22:11,753 - generated samples:3900/10000
+2024-05-21 12:22:12,262 - Iteration 38 	 loss 0.5481
+2024-05-21 12:26:53,057 - generated samples:4000/10000
+2024-05-21 12:26:53,573 - Iteration 39 	 loss 0.5545
+2024-05-21 12:31:34,118 - generated samples:4100/10000
+2024-05-21 12:31:34,651 - Iteration 40 	 loss 0.5549
+2024-05-21 12:36:14,790 - generated samples:4200/10000
+2024-05-21 12:36:15,313 - Iteration 41 	 loss 0.5479
+2024-05-21 12:40:55,730 - generated samples:4300/10000
+2024-05-21 12:40:56,252 - Iteration 42 	 loss 0.5498
+2024-05-21 12:45:36,966 - generated samples:4400/10000
+2024-05-21 12:45:37,485 - Iteration 43 	 loss 0.5450
+2024-05-21 12:50:18,011 - generated samples:4500/10000
+2024-05-21 12:50:18,533 - Iteration 44 	 loss 0.5465
+2024-05-21 12:54:58,809 - generated samples:4600/10000
+2024-05-21 12:54:59,316 - Iteration 45 	 loss 0.5381
+2024-05-21 12:59:39,509 - generated samples:4700/10000
+2024-05-21 12:59:40,015 - Iteration 46 	 loss 0.5367
+2024-05-21 13:04:20,391 - generated samples:4800/10000
+2024-05-21 13:04:20,907 - Iteration 47 	 loss 0.5304
+2024-05-21 13:09:01,600 - generated samples:4900/10000
+2024-05-21 13:09:02,106 - Iteration 48 	 loss 0.5338
+2024-05-21 13:13:43,141 - generated samples:5000/10000
+2024-05-21 13:13:43,664 - Iteration 49 	 loss 0.5358
+2024-05-21 13:18:24,552 - generated samples:5100/10000
+2024-05-21 13:18:25,074 - Iteration 50 	 loss 0.5410
+2024-05-21 13:23:05,717 - generated samples:5200/10000
+2024-05-21 13:23:06,252 - Iteration 51 	 loss 0.5348
+2024-05-21 13:27:47,325 - generated samples:5300/10000
+2024-05-21 13:27:47,846 - Iteration 52 	 loss 0.5308
+2024-05-21 13:32:28,158 - generated samples:5400/10000
+2024-05-21 13:32:28,669 - Iteration 53 	 loss 0.5264
+2024-05-21 13:37:09,555 - generated samples:5500/10000
+2024-05-21 13:37:10,068 - Iteration 54 	 loss 0.5332
+2024-05-21 13:41:51,233 - generated samples:5600/10000
+2024-05-21 13:41:51,758 - Iteration 55 	 loss 0.5445
+2024-05-21 13:46:32,933 - generated samples:5700/10000
+2024-05-21 13:46:33,454 - Iteration 56 	 loss 0.5493
+2024-05-21 13:51:14,230 - generated samples:5800/10000
+2024-05-21 13:51:14,734 - Iteration 57 	 loss 0.5474
+2024-05-21 13:55:55,591 - generated samples:5900/10000
+2024-05-21 13:55:56,098 - Iteration 58 	 loss 0.5407
+2024-05-21 14:00:37,585 - generated samples:6000/10000
+2024-05-21 14:00:38,108 - Iteration 59 	 loss 0.5357
+2024-05-21 14:05:19,369 - generated samples:6100/10000
+2024-05-21 14:05:19,890 - Iteration 60 	 loss 0.5310
+2024-05-21 14:10:00,992 - generated samples:6200/10000
+2024-05-21 14:10:01,520 - Iteration 61 	 loss 0.5340
+2024-05-21 14:14:42,755 - generated samples:6300/10000
+2024-05-21 14:14:43,273 - Iteration 62 	 loss 0.5324
+2024-05-21 14:19:24,337 - generated samples:6400/10000
+2024-05-21 14:19:24,862 - Iteration 63 	 loss 0.5341
+2024-05-21 14:24:06,187 - generated samples:6500/10000
+2024-05-21 14:24:06,704 - Iteration 64 	 loss 0.5231
+2024-05-21 14:28:47,819 - generated samples:6600/10000
+2024-05-21 14:28:48,345 - Iteration 65 	 loss 0.5279
+2024-05-21 14:33:29,491 - generated samples:6700/10000
+2024-05-21 14:33:30,007 - Iteration 66 	 loss 0.5137
+2024-05-21 14:38:11,176 - generated samples:6800/10000
+2024-05-21 14:38:11,703 - Iteration 67 	 loss 0.5150
+2024-05-21 14:42:53,014 - generated samples:6900/10000
+2024-05-21 14:42:53,520 - Iteration 68 	 loss 0.5254
+2024-05-21 14:47:34,412 - generated samples:7000/10000
+2024-05-21 14:47:34,932 - Iteration 69 	 loss 0.5207
+2024-05-21 14:52:15,635 - generated samples:7100/10000
+2024-05-21 14:52:16,153 - Iteration 70 	 loss 0.5188
+2024-05-21 14:56:56,867 - generated samples:7200/10000
+2024-05-21 14:56:57,380 - Iteration 71 	 loss 0.5216
+2024-05-21 15:01:38,312 - generated samples:7300/10000
+2024-05-21 15:01:38,837 - Iteration 72 	 loss 0.5297
+2024-05-21 15:06:20,380 - generated samples:7400/10000
+2024-05-21 15:06:20,897 - Iteration 73 	 loss 0.5304
+2024-05-21 15:11:02,003 - generated samples:7500/10000
+2024-05-21 15:11:02,519 - Iteration 74 	 loss 0.5394
+2024-05-21 15:15:43,350 - generated samples:7600/10000
+2024-05-21 15:15:43,878 - Iteration 75 	 loss 0.5320
+2024-05-21 15:20:24,691 - generated samples:7700/10000
+2024-05-21 15:20:25,211 - Iteration 76 	 loss 0.5363
+2024-05-21 15:25:05,915 - generated samples:7800/10000
+2024-05-21 15:25:06,422 - Iteration 77 	 loss 0.5359
+2024-05-21 15:29:47,199 - generated samples:7900/10000
+2024-05-21 15:29:47,713 - Iteration 78 	 loss 0.5346
+2024-05-21 15:34:28,600 - generated samples:8000/10000
+2024-05-21 15:34:29,111 - Iteration 79 	 loss 0.5330
+2024-05-21 15:39:09,191 - generated samples:8100/10000
+2024-05-21 15:39:09,685 - Iteration 80 	 loss 0.5303
+2024-05-21 15:43:50,339 - generated samples:8200/10000
+2024-05-21 15:43:50,844 - Iteration 81 	 loss 0.5419
+2024-05-21 15:48:31,978 - generated samples:8300/10000
+2024-05-21 15:48:32,490 - Iteration 82 	 loss 0.5330
+2024-05-21 15:53:13,300 - generated samples:8400/10000
+2024-05-21 15:53:13,818 - Iteration 83 	 loss 0.5450
+2024-05-21 15:57:54,498 - generated samples:8500/10000
+2024-05-21 15:57:55,019 - Iteration 84 	 loss 0.5393
+2024-05-21 16:02:35,909 - generated samples:8600/10000
+2024-05-21 16:02:36,428 - Iteration 85 	 loss 0.5440
+2024-05-21 16:07:17,216 - generated samples:8700/10000
+2024-05-21 16:07:17,730 - Iteration 86 	 loss 0.5476
+2024-05-21 16:11:58,536 - generated samples:8800/10000
+2024-05-21 16:11:59,041 - Iteration 87 	 loss 0.5534
+2024-05-21 16:16:39,741 - generated samples:8900/10000
+2024-05-21 16:16:40,259 - Iteration 88 	 loss 0.5446
+2024-05-21 16:21:21,101 - generated samples:9000/10000
+2024-05-21 16:21:21,621 - Iteration 89 	 loss 0.5549
+2024-05-21 16:26:02,313 - generated samples:9100/10000
+2024-05-21 16:26:02,821 - Iteration 90 	 loss 0.5590
+2024-05-21 16:30:43,475 - generated samples:9200/10000
+2024-05-21 16:30:43,982 - Iteration 91 	 loss 0.5425
+2024-05-21 16:35:25,308 - generated samples:9300/10000
+2024-05-21 16:35:25,818 - Iteration 92 	 loss 0.5461
+2024-05-21 16:40:06,670 - generated samples:9400/10000
+2024-05-21 16:40:07,175 - Iteration 93 	 loss 0.5370
+2024-05-21 16:44:47,955 - generated samples:9500/10000
+2024-05-21 16:44:48,479 - Iteration 94 	 loss 0.5400
+2024-05-21 16:49:29,632 - generated samples:9600/10000
+2024-05-21 16:49:30,159 - Iteration 95 	 loss 0.5346
+2024-05-21 16:54:11,071 - generated samples:9700/10000
+2024-05-21 16:54:11,595 - Iteration 96 	 loss 0.5353
+2024-05-21 16:58:52,991 - generated samples:9800/10000
+2024-05-21 16:58:53,579 - Iteration 97 	 loss 0.5312
+2024-05-21 17:03:34,590 - generated samples:9900/10000
+2024-05-21 17:03:35,131 - Iteration 98 	 loss 0.5366
+2024-05-21 17:08:15,489 - generated samples:10000/10000
+2024-05-21 17:08:16,008 - Iteration 99 	 loss 0.5327
+2024-05-21 17:10:39,595 - generated samples:10100/10000
+2024-05-21 17:10:39,932 - Iteration 100 	 loss 0.5257
+2024-05-21 17:17:33,128 - MAE: 0.5393
+2024-05-21 17:17:33,129 - {'mol_stable': 0.8013861386138614, 'atm_stable': 0.9807505101114821}
+2024-05-21 17:17:33,129 - Novelty: 0.8400
